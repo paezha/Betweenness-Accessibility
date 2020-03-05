@@ -52,8 +52,6 @@
 \setcounter{secnumdepth}{0}
 % Pandoc toggle for numbering sections (defaults to be off)
 \setcounter{secnumdepth}{0}
-
-
 % Pandoc header
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -94,17 +92,20 @@
 
   \title{Betweenness-accessibility: Estimating impacts of accessibility on
 networks}
-    \author[ETH]{Georgios Sarlas\corref{Corresponding Author}}
+    \author[ETH]{Georgios Sarlas\corref{c1}}
    \ead{georgios.sarlas@ivt.baug.ethz.ch} 
+   \cortext[c1]{Corresponding Author}
     \author[McMaster University]{Antonio Paez}
    \ead{paezha@mcmaster.ca} 
+  
     \author[ETH]{Kay W. Axhausen}
    \ead{axhausen@ivt.baug.ethz.ch} 
+  
       \address[ETH]{ETH Zurich, Institute for Transport Planning and Systems,
 Stefano-Franscini-Platz 5, 8093 Zurich, Switzerland}
-    \address[McMaster University]{School of Geography and Earth Sciences, 1280 Main St W, Hamilton,
-Ontario, L8S 1S4 Canada}
-    
+    \address[McMaster University]{McMaster University, School of Geography and Earth Sciences, 1280 Main
+St W, Hamilton, Ontario, L8S 1S4 Canada}
+  
   \begin{abstract}
   Accessibility is a central concept in transport geography research that
   has been described as a holistic measure of transportation and land use
@@ -125,8 +126,7 @@ Ontario, L8S 1S4 Canada}
 analysis\end{keyword}
  \end{frontmatter}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}\label{introduction}
 
 Accessibility is a central concept in transport geography with
 importance that stems from its ability to provide a holistic view of the
@@ -138,7 +138,7 @@ concepts of gravitation/spatial interaction or consumer utility
 (Ben-Akiva and Lerman 1977; Kwan 1998; Páez, Scott, and Morency 2012).
 Of these two, gravity-based measures are certainly the most commonly
 used in practice, due to their ease of implementation, interpretation,
-and communicability (Geurs and Van Wee 2004).
+and communicability (Geurs and Wee 2004).
 
 A key aspect of gravity-based accessibility measures is that they
 measure the potential for interaction between origins and destinations.
@@ -165,11 +165,11 @@ the rest of the system. Indicators of this type have found application
 in many fields, including, inter alia, in regional economic analysis
 (e.g., Frost and Spence 1995; Vickerman, Spiekermann, and Wegener 1999),
 in the study of food access (e.g., Apparicio, Cloutier, and Shearmur
-2007; A. Páez et al. 2010b; Widener 2017), in the distribution and
-potential use of urban amenities (e.g., Dony, Delmelle, and Delmelle
+2007; A. Páez, Mercado, et al. 2010b; Widener 2017), in the distribution
+and potential use of urban amenities (e.g., Dony, Delmelle, and Delmelle
 2015; Reyes, Páez, and Morency 2014), and access to health care
-facilities (e.g., Apparicio et al. 2017; Guagliardo 2004; A. Páez et al.
-2010a; Páez, Higgins, and Vivona 2019).
+facilities (e.g., Apparicio et al. 2017; Guagliardo 2004; A. Páez,
+Mercado, et al. 2010a; Páez, Higgins, and Vivona 2019).
 
 Besides the concept of gravity, an alternative approach to understand
 spatial interaction originated with Stouffer (1940), who was interested
@@ -240,9 +240,8 @@ use case. We conclude the paper by discussing the potential and
 limitations of our proposed measures and some directions for future
 research.
 
-\hypertarget{betweenness-centrality-and-betweenness-accessibility}{%
 \section{Betweenness centrality and
-betweenness-accessibility}\label{betweenness-centrality-and-betweenness-accessibility}}
+betweenness-accessibility}\label{betweenness-centrality-and-betweenness-accessibility}
 
 A key concern in network analysis is the study of centrality. In general
 terms, centrality is a measure of the importance of elements in a
@@ -281,8 +280,7 @@ directed to Wasserman, Faust, and Iacobucci (1994) for further details
 about various definitions of centrality. For the purpose of this paper
 we focus exclusively on the concept of betweenness centrality.
 
-\hypertarget{betweenness-centrality}{%
-\subsection{Betweenness centrality}\label{betweenness-centrality}}
+\subsection{Betweenness centrality}\label{betweenness-centrality}
 
 Suppose that there is a graph representation \(V\) of a network composed
 of nodes and edges that connect some, or all, of said nodes. Under this
@@ -342,8 +340,7 @@ paths instead of the fraction. Nevertheless, in cases where a single
 shortest path exists per pair of nodes (normally the case for weighted
 transportation networks), both measures yield identical results.
 
-\hypertarget{betweenness-accessibility}{%
-\subsection{Betweenness-accessibility}\label{betweenness-accessibility}}
+\subsection{Betweenness-accessibility}\label{betweenness-accessibility}
 
 For transportation networks, use of betweenness indicators such as those
 above has helped to understand useful aspects of the \emph{topology} of
@@ -486,30 +483,27 @@ accessibility.
 A reproducible example is useful to illustrate the mechanics required to
 implement the indicators of betweenness-accessibility defined above.
 
-\hypertarget{reproducible-example}{%
-\section{Reproducible example}\label{reproducible-example}}
+\section{Reproducible example}\label{reproducible-example}
 
 In this section we present a small reproducible example to illustrate
 the concept of betweenness-accessibility; the reproducible example (data
 and code in the form of an R Notebook) can be downloaded from this link:
 
 \begin{quote}
-\begin{quote}
-https://github.com/paezha/Betweenness-Accessibility
-\end{quote}
+\url{https://github.com/paezha/Betweenness-Accessibility}
 \end{quote}
 
 The example uses: 1) a small subset of Dissemination Areas, the smallest
-publicly available geography in Canada\footnote{https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm};
+publicly available geography in Canada\footnote{\url{https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm}};
 and 2) a small section of road network publicly available from
-Statistics Canada\footnote{https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm}.
+Statistics Canada\footnote{\url{https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm}}.
 
 The network obtained from the Census does not have speeds on links.
 Instead, it has rank and class codes describing links, that can be used
 to impute speed. For instance, a class 10 link is a highway and a class
 23 link is a local street. Speed values can be imputed based on the link
 class and speed limits obtained from the road classification system for
-Toronto\footnote{https://www.toronto.ca/wp-content/uploads/2018/01/950a-Road-Classification\_Summary-Document.pdf}.
+Toronto\footnote{\url{https://www.toronto.ca/wp-content/uploads/2018/01/950a-Road-Classification_Summary-Document.pdf}}.
 Table \ref{tab:summary-data} shows that the sample system consists of 9
 zones with (simulated) employment and population data; Table
 \ref{tab:summary-network} shows that the network consists of 13 links.
@@ -704,11 +698,9 @@ effect of accessibility.
   \label{btw-accessibility-reproducible-example}
 \end{figure}
 
-\hypertarget{case-study}{%
-\section{Case study}\label{case-study}}
+\section{Case study}\label{case-study}
 
-\hypertarget{context-and-data-sources}{%
-\subsection{Context and data sources}\label{context-and-data-sources}}
+\subsection{Context and data sources}\label{context-and-data-sources}
 
 In this section, we present an application of betweenness-accessibility
 in a real-life urban network. This allows us to examine different
@@ -790,8 +782,7 @@ indicators. This analysis is conducted for links, but similar analysis
 can be conducted for nodes with only minor adjustments to the
 calculations.
 
-\hypertarget{calculation-of-indicators}{%
-\subsection{Calculation of indicators}\label{calculation-of-indicators}}
+\subsection{Calculation of indicators}\label{calculation-of-indicators}
 
 The indicators are shown in Figures \ref{plots_ntw} and
 \ref{centralities}). It is interesting to see that the different
@@ -901,9 +892,8 @@ shortest paths.
     \end{tabular} 
 \end{table}
 
-\hypertarget{application-of-betweenness-accessibility-to-vulnerability-analysis}{%
 \section{Application of betweenness-accessibility to vulnerability
-analysis}\label{application-of-betweenness-accessibility-to-vulnerability-analysis}}
+analysis}\label{application-of-betweenness-accessibility-to-vulnerability-analysis}
 
 As noted in the introduction, the use of accessibility as a tool to
 understand robustness/vulnerability is an emerging topic of research
@@ -919,8 +909,8 @@ including Holme et al. (2002), who use four different attack strategies
 based on topological indicators. The use of betweenness-accessibility
 sees the role of the network in terms of allowing users to reach
 destinations, and therefore allows us to study the socio-economic
-impacts of a network's degradation (see Taylor, Sekhar, and D'Este 2006,
-@Chen2007; Sohn 2006; Taylor 2017).
+impacts of a network's degradation (see Taylor, Sekhar, and D'Este
+2006,Chen et al. (2007); Sohn 2006; Taylor 2017).
 
 To test the ability of betweenness-accessibility to evaluate
 vulnerability, we study the performance of the network subject to
@@ -1040,8 +1030,7 @@ The results demonstrate how betweenness-accessibility can be effectively
 used to explore the potential impacts of interdicting elements in a
 network.
 
-\hypertarget{conclusions}{%
-\section{Conclusions}\label{conclusions}}
+\section{Conclusions}\label{conclusions}
 
 In this paper, a new set of indicators combining the concepts of
 centrality and gravity-based accessibility was introduced. In
@@ -1102,354 +1091,436 @@ of transport geography research as it can pave the way for examining
 different aspects of various kinds of networks (e.g., social) where
 interaction between network elements happens in a disproportional way.
 
-\hypertarget{references}{%
-\section*{References}\label{references}}
+\section{Acknowledgments}\label{acknowledgments}
+
+This research was supported by the Swiss National Science Foundation as
+part of the project ``Models without (personal) data'' (project number:
+144134) to Georgios Sarlas and Kay W. Axhausen. The following \texttt{R}
+packages were used in the course of this investigation and the authors
+wish to acknowledge their developers: \texttt{kableExtra} (Zhu 2019),
+\texttt{knitr} (Xie 2014), \texttt{igraph} (Csardi and Nepusz 2006),
+\texttt{maptools} (Bivand and Lewin-Koh 2019), \texttt{plyr} (Wickham
+2011), \texttt{reshape} (Wickham 2007), \texttt{rgdal} (Bivand, Keitt,
+and Rowlingson 2019), \texttt{rticles} (Allaire et al. 2018),
+\texttt{sp} and \texttt{spdep} (Bivand, Pebesma, and Gómez-Rubio 2008),
+\texttt{spstat} (Baddeley, Rubak, and Turner 2015), \texttt{tidyverse}
+(Wickham 2017), and \texttt{tmap} (Tennekes 2018).
+
+\section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
-\leavevmode\hypertarget{ref-Apparicio2007}{}%
+\hypertarget{ref-Allaire2018rticles}{}
+Allaire, JJ, Yihui Xie, R Foundation, Hadley Wickham, Journal of
+Statistical Software, Ramnath Vaidyanathan, Association for Computing
+Machinery, et al. 2018. \emph{Rticles: Article Formats for R Markdown}.
+\url{https://CRAN.R-project.org/package=rticles}.
+
+\hypertarget{ref-Apparicio2007}{}
 Apparicio, P., M. S. Cloutier, and R. Shearmur. 2007. ``The Case of
 Montreal's Missing Food Deserts: Evaluation of Accessibility to Food
 Supermarkets.'' Journal Article. \emph{International Journal of Health
 Geographics} 6: 1--13.
 
-\leavevmode\hypertarget{ref-Apparicio2017}{}%
+\hypertarget{ref-Apparicio2017}{}
 Apparicio, P., J. Gelb, A. S. Dube, S. Kingham, L. Gauvin, and E.
 Robitaille. 2017. ``The Approaches to Measuring the Potential Spatial
 Access to Urban Health Services Revisited: Distance Types and
 Aggregation-Error Issues.'' Journal Article. \emph{International Journal
 of Health Geographics} 16.
-\url{https://doi.org/10.1186/s12942-017-0105-9}.
+doi:\href{https://doi.org/10.1186/s12942-017-0105-9}{10.1186/s12942-017-0105-9}.
 
-\leavevmode\hypertarget{ref-barabasi1999}{}%
-Barabási, A. L., and A. Réka. 1999. ``Emergence of Scaling in Random
-Networks.'' \emph{Science} 286 (5439): 509--12.
+\hypertarget{ref-Baddeley2015spatial}{}
+Baddeley, A., E. Rubak, and R. Turner. 2015. \emph{Spatial Point
+Patterns: Methodology and Applications with R}. London: Chapman;
+Hall/CRC Press.
+\url{http://www.crcpress.com/Spatial-Point-Patterns-Methodology-and-Applications-with-R/Baddeley-Rubak-Turner/9781482210200/}.
 
-\leavevmode\hypertarget{ref-BenAkiva1977accessibility}{}%
-Ben-Akiva, M., and S. R. Lerman. 1977. \emph{Disaggregate Travel and
+\hypertarget{ref-barabasi1999}{}
+Barabási, A.L., and A. Réka. 1999. ``Emergence of Scaling in Random
+Networks.'' \emph{Science} 286 (5439). American Association for the
+Advancement of Science: 509--12.
+
+\hypertarget{ref-BenAkiva1977accessibility}{}
+Ben-Akiva, M., and S.R. Lerman. 1977. \emph{Disaggregate Travel and
 Mobility Choice Models and Measures of Accessibility}. Conference Paper.
 
-\leavevmode\hypertarget{ref-Black1977}{}%
+\hypertarget{ref-Bivand2019maptools}{}
+Bivand, R., and N. Lewin-Koh. 2019. \emph{Maptools: Tools for Handling
+Spatial Objects}. \url{https://CRAN.R-project.org/package=maptools}.
+
+\hypertarget{ref-Bivand2019rgdal}{}
+Bivand, R., T. Keitt, and B. Rowlingson. 2019. \emph{Rgdal: Bindings for
+the 'Geospatial' Data Abstraction Library}.
+\url{https://CRAN.R-project.org/package=rgdal}.
+
+\hypertarget{ref-bivand2008applied}{}
+Bivand, R.S., E.J. Pebesma, and V. Gómez-Rubio. 2008. \emph{Applied
+Spatial Data Analysis with R}. Vol. 747248717. Springer.
+
+\hypertarget{ref-Black1977}{}
 Black, J., and M. Conroy. 1977. ``Accessibility Measures and the Social
 Evaluation of Urban Structure.'' Journal Article. \emph{Environment and
 Planning A} 9 (9): 1013--31.
 
-\leavevmode\hypertarget{ref-Borgatti2005centrality}{}%
-Borgatti, S. P. 2005. ``Centrality and Network Flow.'' \emph{Social
+\hypertarget{ref-Borgatti2005centrality}{}
+Borgatti, S.P. 2005. ``Centrality and Network Flow.'' \emph{Social
 Networks} 27 (1): 55--71.
 
-\leavevmode\hypertarget{ref-Borgatti2006}{}%
-Borgatti, S. P., and M. G. Everett. 2006. ``A Graph-Theoretic
-Perspective on Centrality.'' \emph{Social Networks} 28 (4): 466--84.
+\hypertarget{ref-Borgatti2006}{}
+Borgatti, S.P., and M.G. Everett. 2006. ``A Graph-Theoretic Perspective
+on Centrality.'' \emph{Social Networks} 28 (4): 466--84.
 
-\leavevmode\hypertarget{ref-Brandes2008}{}%
+\hypertarget{ref-Brandes2008}{}
 Brandes, U. 2008. ``On Variants of Shortest-Path Betweenness Centrality
 and Their Generic Computation.'' \emph{Social Networks} 30 (2): 136--45.
 
-\leavevmode\hypertarget{ref-Carrothers1956historical}{}%
+\hypertarget{ref-Carrothers1956historical}{}
 Carrothers, Gerald AP. 1956. ``An Historical Bedew of the Gravity and
 Potential Concepts of Human Interaction.'' \emph{Journal of the American
-Institute of Planners} 22 (2): 94--102.
+Institute of Planners} 22 (2). Taylor \& Francis: 94--102.
 
-\leavevmode\hypertarget{ref-Chen2007}{}%
+\hypertarget{ref-Chen2007}{}
 Chen, A., C. Yang, S. Kongsomsaksakul, and M. Lee. 2007. ``Network-based
 acessibility measures for vulnerability analysis of degradable
 transportation networks.'' \emph{Networks and Spatial Economics} 7 (3):
-241--56. \url{https://doi.org/10.1007/s11067-006-9012-5}.
+241--56.
+doi:\href{https://doi.org/10.1007/s11067-006-9012-5}{10.1007/s11067-006-9012-5}.
 
-\leavevmode\hypertarget{ref-Cheung2008}{}%
+\hypertarget{ref-Cheung2008}{}
 Cheung, C., and J. Black. 2008. ``A Reappraisal of the Intervening
 Opportunities Model of Commuter Behaviour.'' \emph{Road \& Transport
 Research: A Journal of Australian and New Zealand Research and Practice}
-17 (2): 3.
+17 (2). ARRB Group Ltd: 3.
 
-\leavevmode\hypertarget{ref-crucitti2006centrality}{}%
+\hypertarget{ref-crucitti2006centrality}{}
 Crucitti, Paolo, Vito Latora, and Sergio Porta. 2006. ``Centrality
 Measures in Spatial Networks of Urban Streets.'' \emph{Physical Review
-E} 73 (3): 036125.
+E} 73 (3). APS: 036125.
 
-\leavevmode\hypertarget{ref-igraph}{}%
+\hypertarget{ref-igraph}{}
 Csardi, G., and T. Nepusz. 2006. ``The Igraph Software Package for
 Complex Network Research.'' \emph{InterJournal, Complex Systems} 1695
 (5): 1--9.
 
-\leavevmode\hypertarget{ref-Degenne1999}{}%
+\hypertarget{ref-Degenne1999}{}
 Degenne, A., and M. Fors. 1999. \emph{Introducing Social Networks}.
 Book. Introducing Statistical Methods. London: SAGE Publications.
 
-\leavevmode\hypertarget{ref-Demsar2008}{}%
+\hypertarget{ref-Demsar2008}{}
 Demšar, U., O. Špatenková, and K. Virrantaus. 2008. ``Identifying
 critical locations in a spatial network with graph theory.''
 \emph{Transactions in GIS} 12 (1): 61--82.
-\url{https://doi.org/10.1111/j.1467-9671.2008.01086.x}.
+doi:\href{https://doi.org/10.1111/j.1467-9671.2008.01086.x}{10.1111/j.1467-9671.2008.01086.x}.
 
-\leavevmode\hypertarget{ref-Dony2015}{}%
+\hypertarget{ref-Dony2015}{}
 Dony, C. C., E. M. Delmelle, and E. C. Delmelle. 2015.
 ``Re-Conceptualizing Accessibility to Parks in Multi-Modal Cities: A
 Variable-Width Floating Catchment Area (Vfca) Method.'' Journal Article.
 \emph{Landscape and Urban Planning} 143: 90--99.
-\url{https://doi.org/10.1016/j.landurbplan.2015.06.011}.
+doi:\href{https://doi.org/10.1016/j.landurbplan.2015.06.011}{10.1016/j.landurbplan.2015.06.011}.
 
-\leavevmode\hypertarget{ref-farber2013social}{}%
+\hypertarget{ref-farber2013social}{}
 Farber, Steven, Tijs Neutens, Harvey J Miller, and Xiao Li. 2013. ``The
 Social Interaction Potential of Metropolitan Regions: A Time-Geographic
 Measurement Approach Using Joint Accessibility.'' \emph{Annals of the
-Association of American Geographers} 103 (3): 483--504.
+Association of American Geographers} 103 (3). Taylor \& Francis:
+483--504.
 
-\leavevmode\hypertarget{ref-fransen2015commuter}{}%
+\hypertarget{ref-fransen2015commuter}{}
 Fransen, Koos, Tijs Neutens, Philippe De Maeyer, and Greet Deruyter.
 2015. ``A Commuter-Based Two-Step Floating Catchment Area Method for
 Measuring Spatial Accessibility of Daycare Centers.'' \emph{Health \&
-Place} 32: 65--73.
+Place} 32. Elsevier: 65--73.
 
-\leavevmode\hypertarget{ref-Freeman1977}{}%
-Freeman, L. C. 1977. ``A Set of Measures of Centrality Based on
-Betweenness.'' \emph{Sociometry}, 35--41.
+\hypertarget{ref-Freeman1977}{}
+Freeman, L.C. 1977. ``A Set of Measures of Centrality Based on
+Betweenness.'' \emph{Sociometry}. JSTOR, 35--41.
 
-\leavevmode\hypertarget{ref-Freeman1979}{}%
-Freeman, L. C., D. Roeder, and R. R. Mulholland. 1979. ``Centrality in
+\hypertarget{ref-Freeman1979}{}
+Freeman, L.C., D. Roeder, and R.R. Mulholland. 1979. ``Centrality in
 Social Networks: II. Experimental Results.'' \emph{Social Networks} 2
 (2): 119--41.
 
-\leavevmode\hypertarget{ref-Frost1995}{}%
-Frost, M. E., and N. A. Spence. 1995. ``The Rediscovery of Accessibility
+\hypertarget{ref-Frost1995}{}
+Frost, M.E., and N.A. Spence. 1995. ``The Rediscovery of Accessibility
 and Economic Potential: The Critical Issue of Self-Potential.'' Journal
 Article. \emph{Environment and Planning A} 27 (11): 1833--48.
 
-\leavevmode\hypertarget{ref-gao2013understanding}{}%
+\hypertarget{ref-gao2013understanding}{}
 Gao, Song, Yaoli Wang, Yong Gao, and Yu Liu. 2013. ``Understanding Urban
 Traffic-Flow Characteristics: A Rethinking of Betweenness Centrality.''
-\emph{Environment and Planning B: Planning and Design} 40 (1): 135--53.
+\emph{Environment and Planning B: Planning and Design} 40 (1). SAGE
+Publications Sage UK: London, England: 135--53.
 
-\leavevmode\hypertarget{ref-Geisberger2008}{}%
+\hypertarget{ref-Geisberger2008}{}
 Geisberger, R., P. Sanders, and D. Schultes. 2008. ``Better
 Approximation of Betweenness Centrality.'' In \emph{Proceedings of the
 Meeting on Algorithm Engineering \& Expermiments}, 90--100. Society for
 Industrial; Applied Mathematics.
 
-\leavevmode\hypertarget{ref-Geurs2004}{}%
-Geurs, Karst T, and Bert Van Wee. 2004. ``Accessibility Evaluation of
+\hypertarget{ref-Geurs2004}{}
+Geurs, K.T., and B. van Wee. 2004. ``Accessibility Evaluation of
 Land-Use and Transport Strategies: Review and Research Directions.''
 \emph{Journal of Transport Geography} 12 (2): 127--40.
 
-\leavevmode\hypertarget{ref-Girvan2002community}{}%
+\hypertarget{ref-Girvan2002community}{}
 Girvan, M., and M. E. J. Newman. 2002. ``Community structure in social
 and biological networks.'' \emph{Proceedings of the National Academy of
 Sciences} 99 (12): 7821--6.
 
-\leavevmode\hypertarget{ref-Guagliardo2004}{}%
+\hypertarget{ref-Guagliardo2004}{}
 Guagliardo, M. F. 2004. ``Spatial Accessibility of Primary Care:
 Concepts, Methods and Challenges.'' Journal Article. \emph{International
 Journal of Health Geographics} 3 (3): 1--13.
 
-\leavevmode\hypertarget{ref-Handy1997}{}%
+\hypertarget{ref-Handy1997}{}
 Handy, S., and D. Niemeier. 1997. ``Measuring Accessibility: An
 Exploration of Issues and Alternatives.'' Journal Article.
 \emph{Environment and Planning A} 29 (7): 1175--94.
 
-\leavevmode\hypertarget{ref-Hagerstrand1970people}{}%
+\hypertarget{ref-Hagerstrand1970people}{}
 Hägerstrand, T. 1970. ``What About People in Regional Science?'' Journal
 Article. \emph{Papers of the Regional Science Association} 24: 7--21.
 
-\leavevmode\hypertarget{ref-hennemann2014alternative}{}%
+\hypertarget{ref-hennemann2014alternative}{}
 Hennemann, Stefan, and Ben Derudder. 2014. ``An Alternative Approach to
 the Calculation and Analysis of Connectivity in the World City
 Network.'' \emph{Environment and Planning B: Planning and Design} 41
-(3): 392--412.
+(3). SAGE Publications Sage UK: London, England: 392--412.
 
-\leavevmode\hypertarget{ref-Holme2002}{}%
-Holme, P., B. J. Kim, Yoon C. N., and S. K. Han. 2002. ``Attack
+\hypertarget{ref-Holme2002}{}
+Holme, P., B.J. Kim, Yoon C.N., and S.K. Han. 2002. ``Attack
 vulnerability of complex networks.'' \emph{Physical Review E -
 Statistical Physics, Plasmas, Fluids, and Related Interdisciplinary
-Topics} 65 (5): 14. \url{https://doi.org/10.1103/PhysRevE.65.056109}.
+Topics} 65 (5): 14.
+doi:\href{https://doi.org/10.1103/PhysRevE.65.056109}{10.1103/PhysRevE.65.056109}.
 
-\leavevmode\hypertarget{ref-Horner2002extensions}{}%
-Horner, M. W. 2002. ``Extensions to the Concept of Excess Commuting.''
-\emph{Environment and Planning A: Economy and Space} 34 (3): 543--66.
+\hypertarget{ref-Horner2002extensions}{}
+Horner, M.W. 2002. ``Extensions to the Concept of Excess Commuting.''
+\emph{Environment and Planning A: Economy and Space} 34 (3). SAGE
+Publications Sage UK: London, England: 543--66.
 
-\leavevmode\hypertarget{ref-Jenelius2006}{}%
-Jenelius, E., T. Petersen, and L. G. Mattsson. 2006. ``Importance and
+\hypertarget{ref-Jenelius2006}{}
+Jenelius, E., T. Petersen, and L.G. Mattsson. 2006. ``Importance and
 exposure in road network vulnerability analysis.'' \emph{Transportation
 Research Part A: Policy and Practice} 40 (7): 537--60.
-\url{https://doi.org/10.1016/j.tra.2005.11.003}.
+doi:\href{https://doi.org/10.1016/j.tra.2005.11.003}{10.1016/j.tra.2005.11.003}.
 
-\leavevmode\hypertarget{ref-Kwan1998}{}%
-Kwan, M. P. 1998. ``Space-Time and Integral Measures of Individual
+\hypertarget{ref-Kwan1998}{}
+Kwan, M.P. 1998. ``Space-Time and Integral Measures of Individual
 Accessibility: A Comparative Analysis Using a Point-Based Framework.''
 Journal Article. \emph{Geographical Analysis} 30 (3): 191--216.
 
-\leavevmode\hypertarget{ref-Liao2017accessibility}{}%
+\hypertarget{ref-Liao2017accessibility}{}
 Liao, F. X., and B. van Wee. 2017. ``Accessibility Measures for
 Robustness of the Transport System.'' Journal Article.
 \emph{Transportation} 44 (5): 1213--33.
-\url{https://doi.org/10.1007/s11116-016-9701-y}.
+doi:\href{https://doi.org/10.1007/s11116-016-9701-y}{10.1007/s11116-016-9701-y}.
 
-\leavevmode\hypertarget{ref-Lin2013complex}{}%
+\hypertarget{ref-Lin2013complex}{}
 Lin, J. Y., and Y. F. Ban. 2013. ``Complex Network Topology of
 Transportation Systems.'' Journal Article. \emph{Transport Reviews} 33
-(6): 658--85. \url{https://doi.org/10.1080/01441647.2013.848955}.
+(6): 658--85.
+doi:\href{https://doi.org/10.1080//-01441647.2013.848955}{10.1080/\textbackslash{}-01441647.2013.848955}.
 
-\leavevmode\hypertarget{ref-liu2017spatial}{}%
+\hypertarget{ref-liu2017spatial}{}
 Liu, Xingjian, Liang Dai, and Ben Derudder. 2017. ``Spatial Inequality
 in the Southeast Asian Intercity Transport Network.'' \emph{Geographical
-Review} 107 (2): 317--35.
+Review} 107 (2). Wiley Online Library: 317--35.
 
-\leavevmode\hypertarget{ref-loder2019understanding}{}%
+\hypertarget{ref-loder2019understanding}{}
 Loder, Allister, Lukas Ambühl, Monica Menendez, and Kay W Axhausen.
 2019. ``Understanding Traffic Capacity of Urban Networks.''
-\emph{Scientific Reports} 9 (1): 1--10.
+\emph{Scientific Reports} 9 (1). Nature Publishing Group: 1--10.
 
-\leavevmode\hypertarget{ref-Lopez2017spatial}{}%
+\hypertarget{ref-Lopez2017spatial}{}
 Lopez, Fernando A., and Antonio Páez. 2017. ``Spatial Clustering of
 High-Tech Manufacturing and Knowledge-Intensive Service Firms in the
 Greater Toronto Area.'' Journal Article. \emph{Canadian
 Geographer-Geographe Canadien} 61 (2): 240--52.
-\url{https://doi.org/10.1111/cag.12326}.
+doi:\href{https://doi.org/10.1111/cag.12326}{10.1111/cag.12326}.
 
-\leavevmode\hypertarget{ref-Lowry2014}{}%
+\hypertarget{ref-Lowry2014}{}
 Lowry, M. 2014. ``Spatial Interpolation of Traffic Counts Based on
-Origin--Destination Centrality.'' \emph{Journal of Transport Geography}
+Origin--destination Centrality.'' \emph{Journal of Transport Geography}
 36: 98--105.
 
-\leavevmode\hypertarget{ref-Lopez2017}{}%
-López, F. A., A. Páez, J. A. Carrasco, and N. A. Ruminot. 2017.
+\hypertarget{ref-Lopez2017}{}
+López, F.A., A. Páez, J.A. Carrasco, and N.A. Ruminot. 2017.
 ``Vulnerability of nodes under controlled network topology and flow
 autocorrelation conditions.'' \emph{Journal of Transport Geography} 59:
-77--87. \url{https://doi.org/10.1016/j.jtrangeo.2017.02.002}.
+77--87.
+doi:\href{https://doi.org/10.1016/j.jtrangeo.2017.02.002}{10.1016/j.jtrangeo.2017.02.002}.
 
-\leavevmode\hypertarget{ref-miller1991modelling}{}%
+\hypertarget{ref-miller1991modelling}{}
 Miller, Harvey J. 1991. ``Modelling Accessibility Using Space-Time Prism
 Concepts Within Geographical Information Systems.'' \emph{International
-Journal of Geographical Information System} 5 (3): 287--301.
+Journal of Geographical Information System} 5 (3). Taylor \& Francis:
+287--301.
 
-\leavevmode\hypertarget{ref-Neutens2014spatial}{}%
+\hypertarget{ref-Neutens2014spatial}{}
 Neutens, T., S. Daniels, J. Minnen, I. Glorieux, P. De Maeyer, and N.
 Van de Weghe. 2014. ``Spatial and Temporal Fluctuations in Individual
 Accessibility: A Comparative Analysis Among Subgroups of the
 Population.'' Journal Article. \emph{Geografisk Tidsskrift-Danish
 Journal of Geography} 114 (2): 119--31.
-\url{https://doi.org/10.1080/21662282.2013.863547}.
+doi:\href{https://doi.org/10.1080/21662282.2013.863547}{10.1080/21662282.2013.863547}.
 
-\leavevmode\hypertarget{ref-Paez2019demand}{}%
-Páez, A., C. D. Higgins, and S. F. Vivona. 2019. ``Demand and Level of
+\hypertarget{ref-Paez2019demand}{}
+Páez, A., C.D. Higgins, and S.F. Vivona. 2019. ``Demand and Level of
 Service Inflation in Floating Catchment Area (Fca) Methods.'' Journal
 Article. \emph{PloS One} 14 (6): e0218773.
-\url{https://doi.org/10.1371/journal.pone.0218773}.
+doi:\href{https://doi.org/10.1371/journal.pone.0218773}{10.1371/journal.pone.0218773}.
 
-\leavevmode\hypertarget{ref-Paez2010healthcare}{}%
+\hypertarget{ref-Paez2010healthcare}{}
 Páez, A., R. G. Mercado, S. Farber, C. Morency, and M. Roorda. 2010a.
 ``Accessibility to Health Care Facilities in Montreal Island: An
 Application of Relative Accessibility Indicators from the Perspective of
 Senior and Non-Senior Residents.'' Journal Article. \emph{International
 Journal of Health Geographics} 9.
-\url{https://doi.org/10.1186/1476-072x-9-52}.
+doi:\href{https://doi.org/10.1186/1476-072x-9-52}{10.1186/1476-072x-9-52}.
 
-\leavevmode\hypertarget{ref-Paez2010fooddeserts}{}%
----------. 2010b. ``Relative Accessibility Deprivation Indicators for
-Urban Settings: Definitions and Application to Food Deserts in
-Montreal.'' Journal Article. \emph{Urban Studies} 47 (7): 1415--38.
-\url{https://doi.org/10.1177/0042098009353626}.
+\hypertarget{ref-Paez2010fooddeserts}{}
+Páez, A., R.G. Mercado, S. Farber, C. Morency, and M. Roorda. 2010b.
+``Relative Accessibility Deprivation Indicators for Urban Settings:
+Definitions and Application to Food Deserts in Montreal.'' Journal
+Article. \emph{Urban Studies} 47 (7): 1415--38.
+doi:\href{https://doi.org/10.1177/0042098009353626}{10.1177/0042098009353626}.
 
-\leavevmode\hypertarget{ref-Paez2013jobs}{}%
+\hypertarget{ref-Paez2012positive}{}
+Páez, A., D. M. Scott, and C. Morency. 2012. ``Measuring Accessibility:
+Positive and Normative Implementations of Various Accessibility
+Indicators.'' Journal Article. \emph{Journal of Transport Geography} 25:
+141--53.
+doi:\href{https://doi.org/10.1016/j.jtrangeo.2012/-.03.016}{10.1016/j.jtrangeo.2012\textbackslash{}-.03.016}.
+
+\hypertarget{ref-Paez2013jobs}{}
 Páez, Antonio, Steven Farber, Ruben Mercado, Matthew Roorda, and
 Catherine Morency. 2013. ``Jobs and the Single Parent: An Analysis of
 Accessibility to Employment in Toronto.'' Journal Article. \emph{Urban
 Geography} 34 (6): 815--42.
-\url{https://doi.org/10.1080/02723638.2013.778600}.
+doi:\href{https://doi.org/10.1080/02723638.2013.778600}{10.1080/02723638.2013.778600}.
 
-\leavevmode\hypertarget{ref-Paez2012positive}{}%
-Páez, A., D. M. Scott, and C. Morency. 2012. ``Measuring Accessibility:
-Positive and Normative Implementations of Various Accessibility
-Indicators.'' Journal Article. \emph{Journal of Transport Geography} 25:
-141--53. \url{https://doi.org/10.1016/j.jtrangeo.2012.03.016}.
-
-\leavevmode\hypertarget{ref-Rcore}{}%
+\hypertarget{ref-Rcore}{}
 R, Core Team. 2013. ``R: A Language and Environment for Statistical
-Computing.''
+Computing.'' Vienna, Austria.
 
-\leavevmode\hypertarget{ref-Reggiani2009network}{}%
+\hypertarget{ref-Reggiani2009network}{}
 Reggiani, A., S. Signoretti, P. Nijkamp, and A. Cento. 2009. ``Network
 Measures in Civil Air Transport: A Case Study of Lufthansa.'' Journal
 Article. \emph{Lecture Notes in Economics and Mathematical Systems} 613:
 257--82.
-\url{ISI:000263416000014\%0AC:/Papers/Lecture\%20Notes\%20in\%20Economics\%20and\%20Mathematical\%20Systems/Lecture\%20Notes\%20in\%20Economics\%20and\%20Mathematical\%20Systems\%20(2009)\%20613\%20257-282.pdf}.
+\href{ISI:000263416000014\%0AC:/Papers/Lecture\%20Notes\%20in\%20Economics\%20and\%20Mathematical\%20Systems/Lecture\%20Notes\%20in\%20Economics\%20and\%20Mathematical\%20Systems\%20(2009)\%20613\%20257-282.pdf}{ISI:000263416000014
+C:/Papers/Lecture Notes in Economics and Mathematical Systems/Lecture Notes in Economics and Mathematical Systems (2009) 613 257-282.pdf}.
 
-\leavevmode\hypertarget{ref-Reyes2014}{}%
+\hypertarget{ref-Reyes2014}{}
 Reyes, M., A. Páez, and C. Morency. 2014. ``Walking Accessibility to
 Urban Parks by Children: A Case Study of Montreal.'' Journal Article.
 \emph{Landscape and Urban Planning} 125: 38--47.
-\url{https://doi.org/10.1016/j.landurbplan.2014.02.002}.
+doi:\href{https://doi.org/10.1016/j.landurbplan.2014.02.002}{10.1016/j.landurbplan.2014.02.002}.
 
-\leavevmode\hypertarget{ref-Sarlas2015}{}%
-Sarlas, G., and K. W. Axhausen. 2015. ``Prediction of AADT on a
+\hypertarget{ref-Sarlas2015}{}
+Sarlas, G., and K.W. Axhausen. 2015. ``Prediction of AADT on a
 nationwide network based on an accessibility-weighted centrality
 measure.'' \emph{Arbeitsberichte Verkehrs-und Raumplanung, IVT, ETH
-Zurich} 1094.
+Zurich} 1094. IVT, ETH Zurich.
 
-\leavevmode\hypertarget{ref-Sarlas2019}{}%
+\hypertarget{ref-Sarlas2019}{}
 Sarlas, Georgios, and Kay W Axhausen. 2018. ``Commuting Distance and
 Individual Accessibility.'' \emph{Arbeitsberichte Verkehrs-Und
-Raumplanung} 1376.
+Raumplanung} 1376. IVT, ETH Zurich.
 
-\leavevmode\hypertarget{ref-Scott1997impacts}{}%
-Scott, D. M., P. S. Kanaroglou, and W. P Anderson. 1997. ``Impacts of
+\hypertarget{ref-Scott1997impacts}{}
+Scott, D.M., P.S. Kanaroglou, and W.P Anderson. 1997. ``Impacts of
 Commuting Efficiency on Congestion and Emissions: Case of the Hamilton
 Cma, Canada.'' \emph{Transportation Research Part D: Transport and
 Environment} 2 (4): 245--57.
 
-\leavevmode\hypertarget{ref-Scott2006}{}%
-Scott, D. M., D. C. Novak, L. Aultman-Hall, and F. Guo. 2006. ``Network
+\hypertarget{ref-Scott2006}{}
+Scott, D.M., D.C. Novak, L. Aultman-Hall, and F. Guo. 2006. ``Network
 Robustness Index: A new method for identifying critical links and
 evaluating the performance of transportation networks.'' \emph{Journal
 of Transport Geography} 14 (3): 215--27.
 
-\leavevmode\hypertarget{ref-Shimbel1953}{}%
+\hypertarget{ref-Shimbel1953}{}
 Shimbel, A. 1953. ``Structural Parameters of Communication Networks.''
 Journal Article. \emph{The Bulletin of Mathematical Biophysics} 15 (4):
 501--7.
 
-\leavevmode\hypertarget{ref-Sohn2006}{}%
+\hypertarget{ref-Sohn2006}{}
 Sohn, J. 2006. ``Evaluating the significance of highway network links
 under the flood damage: An accessibility approach.''
 \emph{Transportation Research Part A: Policy and Practice} 40 (6):
-491--506. \url{https://doi.org/10.1016/j.tra.2005.08.006}.
+491--506.
+doi:\href{https://doi.org/10.1016/j.tra.2005.08.006}{10.1016/j.tra.2005.08.006}.
 
-\leavevmode\hypertarget{ref-Stouffer1940}{}%
-Stouffer, S. A. 1940. ``Intervening Opportunities: A Theory Relating
+\hypertarget{ref-Stouffer1940}{}
+Stouffer, S.A. 1940. ``Intervening Opportunities: A Theory Relating
 Mobility and Distance.'' Journal Article. \emph{American Sociological
 Review} 5 (6): 845--67.
 
-\leavevmode\hypertarget{ref-Taylor2017}{}%
-Taylor, M. A.P. 2017. \emph{Accessibility Methods}.
-\url{https://doi.org/10.1016/B978-0-12-811010-2.00005-8}.
+\hypertarget{ref-Taylor2017}{}
+Taylor, M.A.P. 2017. \emph{Accessibility Methods}.
+doi:\href{https://doi.org/10.1016/B978-0-12-811010-2.00005-8}{10.1016/B978-0-12-811010-2.00005-8}.
 
-\leavevmode\hypertarget{ref-Taylor2006}{}%
-Taylor, M. A.P., S. V.C. Sekhar, and G. M. D'Este. 2006. ``Application
-of accessibility based methods for vulnerability analysis of strategic
-road networks.'' \emph{Networks and Spatial Economics} 6 (3-4): 267--91.
-\url{https://doi.org/10.1007/s11067-006-9284-9}.
+\hypertarget{ref-Taylor2006}{}
+Taylor, M.A.P., S.V.C. Sekhar, and G.M. D'Este. 2006. ``Application of
+accessibility based methods for vulnerability analysis of strategic road
+networks.'' \emph{Networks and Spatial Economics} 6 (3-4): 267--91.
+doi:\href{https://doi.org/10.1007/s11067-006-9284-9}{10.1007/s11067-006-9284-9}.
 
-\leavevmode\hypertarget{ref-Vickerman1999}{}%
+\hypertarget{ref-Tennekes2018tmap}{}
+Tennekes, M. 2018. ``tmap: Thematic Maps in R.'' \emph{Journal of
+Statistical Software} 84 (6): 1--39.
+doi:\href{https://doi.org/10.18637/jss.v084.i06}{10.18637/jss.v084.i06}.
+
+\hypertarget{ref-Vickerman1999}{}
 Vickerman, R., K. Spiekermann, and M. Wegener. 1999. ``Accessibility and
 Economic Development in Europe.'' Journal Article. \emph{Regional
 Studies} 33 (1): 1--15. \url{ISI:000078687200001}.
 
-\leavevmode\hypertarget{ref-Wasserman1994social}{}%
+\hypertarget{ref-Wasserman1994social}{}
 Wasserman, S., K. Faust, and D. Iacobucci. 1994. \emph{Social Network
 Analysis: Methods and Applications}. Book. Cambridge: Cambridge
 University Press.
 
-\leavevmode\hypertarget{ref-widener2013using}{}%
-Widener, Michael J, Steven Farber, Tijs Neutens, and Mark W Horner.
-2013. ``Using Urban Commuting Data to Calculate a Spatiotemporal
-Accessibility Measure for Food Environment Studies.'' \emph{Health \&
-Place} 21: 1--9.
+\hypertarget{ref-Wickham2007reshape}{}
+Wickham, H. 2007. ``Reshaping Data with the Reshape Package.''
+\emph{Journal of Statistical Software} 21 (12).
+\url{http://www.jstatsoft.org/v21/i12/paper}.
 
-\leavevmode\hypertarget{ref-Widener2017}{}%
+\hypertarget{ref-Wickham2011plyr}{}
+---------. 2011. ``The Split-Apply-Combine Strategy for Data Analysis.''
+\emph{Journal of Statistical Software} 40 (1): 1--29.
+\url{http://www.jstatsoft.org/v40/i01/}.
+
+\hypertarget{ref-Wickham2017tidyverse}{}
+Wickham, Hadley. 2017. \emph{Tidyverse: Easily Install and Load the
+'Tidyverse'}. \url{https://CRAN.R-project.org/package=tidyverse}.
+
+\hypertarget{ref-Widener2017}{}
 Widener, M. J. 2017. ``Comparing Measures of Accessibility to Urban
 Supermarkets for Transit and Auto Users.'' Journal Article.
 \emph{Professional Geographer} 69 (3): 362--71.
-\url{https://doi.org/10.1080/00330124.2016.1237293}.
+doi:\href{https://doi.org/10.1080/00330124.2016.1237293}{10.1080/00330124.2016.1237293}.
+
+\hypertarget{ref-widener2013using}{}
+Widener, Michael J, Steven Farber, Tijs Neutens, and Mark W Horner.
+2013. ``Using Urban Commuting Data to Calculate a Spatiotemporal
+Accessibility Measure for Food Environment Studies.'' \emph{Health \&
+Place} 21. Elsevier: 1--9.
+
+\hypertarget{ref-knitr2014}{}
+Xie, Yihui. 2014. ``Knitr: A Comprehensive Tool for Reproducible
+Research in R.'' In \emph{Implementing Reproducible Computational
+Research}, edited by Victoria Stodden, Friedrich Leisch, and Roger D.
+Peng. Chapman; Hall/CRC.
+\url{http://www.crcpress.com/product/isbn/9781466561595}.
+
+\hypertarget{ref-Zhu2018}{}
+Zhu, H. 2019. \emph{KableExtra: Construct Complex Table with 'Kable' and
+Pipe Syntax}. \url{https://CRAN.R-project.org/package=kableExtra}.
 
 
 \end{document}

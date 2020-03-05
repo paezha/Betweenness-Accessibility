@@ -15,7 +15,7 @@ address:
   - code: ETH
     address: ETH Zurich, Institute for Transport Planning and Systems,  Stefano-Franscini-Platz 5, 8093 Zurich, Switzerland
   - code: McMaster University
-    address: School of Geography and Earth Sciences, 1280 Main St W, Hamilton, Ontario, L8S 1S4 Canada
+    address: McMaster University, School of Geography and Earth Sciences, 1280 Main St W, Hamilton, Ontario, L8S 1S4 Canada
 abstract: |
   Accessibility is a central concept in transport geography research that has been described as a holistic measure of transportation and land use systems. This concept has numerous implementations, but virtually all share the way accessibility is measured as an attribute of pairs of origins and destinations. Borrowing from concepts in network science, in this paper we propose a new centrality measure called betweenness-accessibility. This measure couples the familiar betweenness indicator of social networks with the geographical concept of accessibility. Betweenness-accessibility is useful to estimate the impacts of accessibility on networks as potential for interaction is reflected on them. The new measure is illustrated using a reproducible example. In addition, an application to vulnerability analysis in the city of Zurich, Switzerland, provides an empirical case study to showcase the usefulness of betweenness-accessibility. 
   
@@ -91,7 +91,7 @@ vulnerability analysis purposes, as a potential use case. We conclude the paper 
 Betweenness centrality and betweenness-accessibility
 ==========================
 
-A key concern in network analysis is the study of centrality. In general terms, centrality is a measure of the importance of elements in a network, although “importance” is a flexible concept that hinges on specific assumptions about the way that traffic flows through a network. [@Freeman1979; @Degenne1999]. A popular measure of centrality, for example, is the degree centrality of a node, which quantifies the number of edges that incide on a node [@Freeman1979]. Another measure, betweenness centrality, evaluates the importance of a node in a network by considering its flow-through traffic, that is, the number of paths connecting other nodes that pass through it [@Freeman1977]. 
+A key concern in network analysis is the study of centrality. In general terms, centrality is a measure of the importance of elements in a network, although "importance" is a flexible concept that hinges on specific assumptions about the way that traffic flows through a network. [@Freeman1979; @Degenne1999]. A popular measure of centrality, for example, is the degree centrality of a node, which quantifies the number of edges that incide on a node [@Freeman1979]. Another measure, betweenness centrality, evaluates the importance of a node in a network by considering its flow-through traffic, that is, the number of paths connecting other nodes that pass through it [@Freeman1977]. 
 
 Seen from this perspective, centrality measures are similar to accessibility indicators in that they take into account the potential for interaction between different elements in a system. For example, degree centrality is similar to a cumulative opportunities measure with a threshold of a single edge:
 
@@ -101,7 +101,7 @@ C_{\rm D}(p_i) = \sum_j p_jI(l_{ij}\le 1)
 
 In the expression above $p_i$ and $p_j$ are nodes in the network, $I(\cdot)$ is an indicator function that takes the value of one if the argument is true and zero otherwise; $l_{ij}$ is the number of intervening edges between $p_i$ and $p_j$.
 
-Betweenness centrality, in contrast, is concerned with the pathways for interaction - and therefore with pass-through flows, similar  to Stouffer’s [-@Stouffer1940] intervening opportunities model. It offers, as will be seen, a different perspective of centrality that serves as a useful complement to accessibility analysis. A thorough discussion on the topic of centrality is given by @Borgatti2005centrality, and the interested reader is directed to @Wasserman1994social for further details about various definitions of centrality. For the purpose of this paper we focus exclusively on the concept of betweenness centrality. 
+Betweenness centrality, in contrast, is concerned with the pathways for interaction - and therefore with pass-through flows, similar  to Stouffer's [-@Stouffer1940] intervening opportunities model. It offers, as will be seen, a different perspective of centrality that serves as a useful complement to accessibility analysis. A thorough discussion on the topic of centrality is given by @Borgatti2005centrality, and the interested reader is directed to @Wasserman1994social for further details about various definitions of centrality. For the purpose of this paper we focus exclusively on the concept of betweenness centrality. 
 
 ## Betweenness centrality
 
@@ -193,11 +193,13 @@ Reproducible example
 
 In this section we present a small reproducible example to illustrate the concept of betweenness-accessibility; the reproducible example (data and code in the form of an R Notebook) can be downloaded from this link:  
   
->>https://github.com/paezha/Betweenness-Accessibility  
+\begin{quote}
+\url{https://github.com/paezha/Betweenness-Accessibility}
+\end{quote} 
   
-The example uses: 1) a small subset of Dissemination Areas, the smallest publicly available geography in Canada^[https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm]; and 2) a small section of road network publicly available from Statistics Canada^[https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm].
+The example uses: 1) a small subset of Dissemination Areas, the smallest publicly available geography in Canada^[\url{https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm}]; and 2) a small section of road network publicly available from Statistics Canada^[\url{https://www12.statcan.gc.ca/census-recensement/2011/geo/RNF-FRR/index-eng.cfm}].
 
-The network obtained from the Census does not have speeds on links. Instead, it has rank and class codes describing links, that can be used to impute speed. For instance, a class 10 link is a highway and a class 23 link is a local street. Speed values can be imputed based on the link class and speed limits obtained from the road classification system for Toronto^[https://www.toronto.ca/wp-content/uploads/2018/01/950a-Road-Classification_Summary-Document.pdf]. Table \ref{tab:summary-data} shows that the sample system consists of 9 zones with (simulated) employment and population data; Table \ref{tab:summary-network} shows that the network consists of 13 links. Key information about the zoning system and network is shown in Fig. \ref{map-data-reproducible-example}. Panel (a) of this figure shows population by zone, not including people who work in the same zone; Panel (b) shows employment by zone, not including jobs taken by people who live in the same zone, and last, Panel (c) shows the free flow travel time by link. In the example, population tends to be high to the east, whereas employment is highest in the northwest of the region. 
+The network obtained from the Census does not have speeds on links. Instead, it has rank and class codes describing links, that can be used to impute speed. For instance, a class 10 link is a highway and a class 23 link is a local street. Speed values can be imputed based on the link class and speed limits obtained from the road classification system for Toronto^[\url{https://www.toronto.ca/wp-content/uploads/2018/01/950a-Road-Classification_Summary-Document.pdf}]. Table \ref{tab:summary-data} shows that the sample system consists of 9 zones with (simulated) employment and population data; Table \ref{tab:summary-network} shows that the network consists of 13 links. Key information about the zoning system and network is shown in Fig. \ref{map-data-reproducible-example}. Panel (a) of this figure shows population by zone, not including people who work in the same zone; Panel (b) shows employment by zone, not including jobs taken by people who live in the same zone, and last, Panel (c) shows the free flow travel time by link. In the example, population tends to be high to the east, whereas employment is highest in the northwest of the region. 
 ```{r summary-data-reproducible-example, echo=FALSE}
 zones@data %>% 
   transmute(Zone_ID = c(1:9), 
@@ -303,9 +305,7 @@ Accessibility calculations results are shown in Fig. \ref{accessibility-reproduc
 for (i in centroid_nodes$node_ID) {
 sp1 <- tm_shape(zones) + tm_polygons(col = "#d9d9d9",border.alpha = 0.2) +
   tm_shape(osm) + 
-  #tm_lines(paste("SP_node_",i,sep=""), palette = "Greys", lwd = 5,scale=1.4) +  
   tm_lines(paste("SP_node_",i,sep=""), palette=c("white","#737373"), lwd = 5,scale=1.4) +  
-  #tm_lines(col=paste("SP_node_",i,sep=""),palette=c("white","#737373"),lwd = 5,scale=1.4) 
   tm_layout(frame = FALSE, inner.margins = 0, outer.margins = 0) +
   tm_shape(centroid_nodes[-which(centroid_nodes$node_ID==i),]) + 
   tm_bubbles(size = 2.5, col = "white",scale=1.6) +
@@ -569,43 +569,12 @@ With respect to performance according to total travel time (see Fig. \ref{tt-dif
 
 The results demonstrate how betweenness-accessibility can be effectively used to explore the potential impacts of interdicting elements in a network.
 
-<!-- NOTE: Figures Fig. \ref{tt-diff10} and  \ref{acc-diff10} are the same but for steps of 10 links instead  ). -->
-<!-- \begin{figure}[h!] -->
-<!-- \begin{subfigure}{.8\textwidth} -->
-<!--   \centering -->
-<!--   \includegraphics[width=1\linewidth]{Plots/Link_elimination/acc_emp_10.pdf}   -->
-<!--   \caption{Employment accessibility} -->
-<!-- \end{subfigure} -->
-<!-- \begin{subfigure}{.8\textwidth} -->
-<!--   \centering -->
-<!--   \includegraphics[width=1\linewidth]{Plots/Link_elimination/acc_pop_10.pdf}   -->
-<!--   \caption{Population accessibility} -->
-<!--   \end{subfigure} -->
-<!--  \caption{Accessibility-based performance indicator} -->
-<!--   \label{acc-diff10} -->
-<!-- \end{figure} -->
-
-<!-- \begin{figure} -->
-<!-- \begin{subfigure}{.8\textwidth} -->
-<!--   \centering -->
-<!--   \includegraphics[width=1\linewidth]{Plots/Link_elimination/travel_time_diff_10.pdf}   -->
-<!--   \caption{Population-employment scenario} -->
-<!-- \end{subfigure} -->
-<!-- \begin{subfigure}{.8\textwidth} -->
-<!--   \centering -->
-<!--   \includegraphics[width=1\linewidth]{Plots/Link_elimination/travel_time_diff_10_emp.pdf}   -->
-<!--   \caption{Employment-population scenario} -->
-<!-- \end{subfigure} -->
-<!--  \caption{Total travel-time performance indicator} -->
-<!--   \label{tt-diff10} -->
-<!-- \end{figure} -->
-
 Conclusions
 ==========================
 
 In this paper, a new set of indicators combining the concepts of centrality and gravity-based accessibility was introduced. In particular, the indicators expanded the potential of both centrality analysis and accessibility analysis. From the social network analysis perspective, betweenness-accessibility introduces a weight that measures interaction potential, whereas from the accessibility perspective, the new measure allows a researcher to estimate incidental accessibility impacts in a network, as well as how a network helps generate accessibility. In conclusion, the new centrality formulation allows overcoming previously identified shortcomings of traditional betweenness measures, resulting in a measure tailored for networks with heterogeneous interaction levels. 
 
-Usefulness of betweenness-accessibility was illustrated with a case study of Zurich, in Switzerland. Analysis showcased how the measure can help to identify important network elements when system-wide interaction potential is considered. The technique can be used to allocate potential flows to network elements in a relatively straightforward way, as shown by its application to the Zurich case. Further, utility of betweenness accessibility was also tested using vulnerability analysis. The application demonstrated the concept’s ability to identify critical links whose interdiction results in substantial losses of network serviceability. Performance evaluation shows that betweenness-accessibility is potentially an effective tool to identify network vulnerability.
+Usefulness of betweenness-accessibility was illustrated with a case study of Zurich, in Switzerland. Analysis showcased how the measure can help to identify important network elements when system-wide interaction potential is considered. The technique can be used to allocate potential flows to network elements in a relatively straightforward way, as shown by its application to the Zurich case. Further, utility of betweenness accessibility was also tested using vulnerability analysis. The application demonstrated the concept's ability to identify critical links whose interdiction results in substantial losses of network serviceability. Performance evaluation shows that betweenness-accessibility is potentially an effective tool to identify network vulnerability.
 
 Overall, the concept of betweenness-accessibility helps to provide a richer picture of the ways a transportation system operates to generate connectivity, compared to accessibility and betweenness measures alone. That said, it allows a quantification of accessibility to take place in a network-based way; a perspective which can find application in areas such as spatial- and social-equity analysis, vulnerability analysis, cost-benefit analysis, and land-use and transport interaction models. 
 
@@ -613,10 +582,10 @@ It is important to acknowledge that one limitation of the approach is the use of
 
 Last, the value of the newly introduced family of indicators, especially on its general weighted version, can potentially extend beyond the scope of transport geography research as it can pave the way for examining different aspects of various kinds of networks (e.g., social) where interaction between network elements happens in a disproportional way. 
 
-<!-- Acknowledgments -->
-<!-- ========================== -->
+Acknowledgments
+==========================
 
-<!-- This research was supported by Grant [X] to author(s) [Y]. The following `R` packages were used in the course of this investigation and the authors wish to acknowledge their developers: `kableExtra` [@Zhu2018], `knitr` [@Xie2015dynamic; @Xie2019knitr], `igraph` [@igraph], `maptools` [@Bivand2019maptools], `plyr` [@Wickham2011plyr], `reshape` [@Wickham2007reshape], `rgdal` [@Bivand2019rgdal], `rticles` [@Allaire2018rticles], `sp` and `spdep` [@bivand2008applied], `spstat` [@Baddeley2015spatial], `tidyverse` [@Wickham2017tidyverse], and `tmap` [@Tennekes2018tmap]. -->
+This research was supported by the Swiss National Science Foundation as part of the project "Models without (personal) data" (project number: 144134) to Georgios Sarlas and Kay W. Axhausen. The following `R` packages were used in the course of this investigation and the authors wish to acknowledge their developers: `kableExtra` [@Zhu2018], `knitr` [@knitr2014], `igraph` [@igraph], `maptools` [@Bivand2019maptools], `plyr` [@Wickham2011plyr], `reshape` [@Wickham2007reshape], `rgdal` [@Bivand2019rgdal], `rticles` [@Allaire2018rticles], `sp` and `spdep` [@bivand2008applied], `spstat` [@Baddeley2015spatial], `tidyverse` [@Wickham2017tidyverse], and `tmap` [@Tennekes2018tmap].
 
 References 
 ==========================
